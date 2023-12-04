@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+<title> Segment Discount </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="landing page, website design" />
+  <script src="scripts/jquery.min.js"></script>
+
+  <script src="scripts/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="scripts/bootstrap.min.css">
+
+<link type="text/css" rel="stylesheet" href="scripts/storez.css">
+
+
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var i=Array.prototype.slice.call(arguments);i.unshift(e);analytics.push(i);return analytics}};for(var i=0;i<analytics.methods.length;i++){var key=analytics.methods[i];analytics[key]=analytics.factory(key)}analytics.load=function(key,i){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=i};analytics._writeKey="DLvZs4x58utQzu10WlYJNW2JytjefZyI";;analytics.SNIPPET_VERSION="4.16.1";
+  analytics.load("DLvZs4x58utQzu10WlYJNW2JytjefZyI");
+  analytics.page();
+  }}();
+
+
+
+
+
+window.addEventListener('load', function(e) {
+    if (navigator.onLine) {
+$('#network_status').html("<br><br><div style='color:white;background:green;padding:10px;border:none;'>Your network status is Online </div>");
+
+    } else {
+$('#network_status').html("<br><br><div style='color:white;background:red;padding:10px;border:none;'>Your network status is Offline. Please Ensure You are Online to use this app... </div>");
+
+    }
+}, false);
+
+
+
+window.addEventListener('online', function(e) {
+$('#network_status').html("<br><br><div style='color:white;background:green;padding:10px;border:none;'>Your are back is Online </div>");
+
+}, false);
+            
+window.addEventListener('offline', function(e) {
+$('#network_status').html("<br><br><div style='color:white;background:red;padding:10px;border:none;'>Your Internet Connection is Down </div>");
+
+}, false);
+
+</script>
+
+
+</head>
+<body>
+
+
+
+<script>
+
+// Get Information about Anonymous User
+$(document).ready(function(){
+$('.djs').hide();
+$('.djsc').hide();
+
+
+
+var annoymous_visitor_id  = Math.floor(new Date().getTime() / 1000);
+var product_View  = 'Segment Big Polo';
+
+
+var analysis = analytics.identify(annoymous_visitor_id, {
+  name: 'Anonymous Visitor',
+  products_viewed: product_View,
+  page_viewed: 'big_polo.html'
+
+});
+
+var track = analytics.track('Anonymous Customer', {
+  Name: 'Anonymous Visitor',
+  Products_Viewed: product_View,
+  Notes: 'Annonymous Visitor Just Viewed a Products Titled: Segment Big Polo.'
+});
+
+
+					
+});
+
+
+
+
+// Make Purchase
+$(document).ready(function(){
+$('#buy_btn').click(function(){
+var price  = $('.price').val();
+
+var Product_id  = 'bigpolo_101';
+var Product_name  = 'Segment Big Polo';
+var customer_name = $('#fullname').val();
+var customer_email = $('#email').val();
+
+if(customer_name  ==''){
+alert('Customer Name Cannot be Empty');
+return false;
+}
+
+if(customer_email  ==''){
+alert('Customer Emai Cannot be Empty');
+return false;
+}
+
+
+
+var customer_id  = Math.floor(new Date().getTime() / 1000);
+
+/*
+var analysis = analytics.identify(annoymous_visitor_id, {
+  customer_name: customer_name,
+  customer_email: customer_email,
+  product_purchased: Product_name,
+  price: price,
+  Notes: 'Someone Just Bought Your Products.'
+
+});
+*/
+
+var track = analytics.track('Products Purchased', {
+  customer_id: customer_id,
+  customer_name: customer_name,
+  customer_email: customer_email,
+  product_purchased: Product_name,
+  price: price,
+  Notes: 'Someone Just Bought Your Products.'
+});
+
+
+
+
+
+$('#loader').fadeIn(400).html('<br><div style="color:black;background:#ddd;padding:10px;"><img src="ajax-loader.gif"> Please Wait! ..Processing Purchase.</div>')
+
+ 		
+$('#loader').hide();
+alert('Products Purchased');
+$('#result').html("<div style='color:white;background:green;border:none;padding:10px;'>Products Purchased</div>");
+location.reload();
+//setTimeout(function(){ $('#result').html(''); }, 5000);
+	
+	})
+					
+});
+
+
+
+// Give Payment Discount
+
+$(document).ready(function(){
+$('.discount').click(function(){
+
+var new_discount ='30';
+var new_price ='70';
+
+$('.discountx').html(new_price);
+$('.price').val(new_price).value;
+
+var new_discount2 ='Discount: 30(USD). You will now pay 70(USD)';
+$('.discountx2').html(new_discount2);
+
+
+alert('Discount of 30(USD) Given');
+$('.djs').show();
+$('.djsc').hide();
+
+	})
+					
+});
+
+
+
+
+
+$(document).ready(function(){
+$('.coupon').click(function(){
+
+var new_discount ='30';
+var new_price ='70';
+
+$('.discountx').html(new_price);
+$('.price').val(new_price).value;
+
+var new_discount2 ='Coupon Code: 3030. You will now pay 70(USD)';
+$('.discountx2').html(new_discount2);
+
+
+//alert('Discount of 30(USD) Given');
+$('.djs').show();
+$('.djsc').show();
+	})
+					
+});
+
+</script>
+
+
+<div class="text-center">
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navgator">
+        <span class="navbar-header-collapse-color icon-bar"></span>
+        <span class="navbar-header-collapse-color icon-bar"></span>
+        <span class="navbar-header-collapse-color icon-bar"></span> 
+        <span class="navbar-header-collapse-color icon-bar"></span>                       
+      </button>
+     
+<li class="navbar-brand home_click imagelogo_li_remove" ><img class="img-rounded imagelogo_data" src="logo.png"></li>
+    </div>
+    <div class="collapse navbar-collapse" id="navgator">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+
+<li class="navgate">
+
+<button class="invite_btnx btn btn-warning"><a style="color:white;" href='index.html' title='Home Page'>Back to Home Page</a></button>
+
+</li>
+</ul>
+
+
+
+
+
+    </div>
+  </div>
+
+
+</nav>
+
+
+    </div><br />
+<br /><br />
+
+
+
+<div style='width:100vw; height: 100vh;  min-height:600px;'>
+ 
+
+<div class='row'>
+
+<center><div id='network_status'></div>
+<h2>Segment Big Polo Products</h2>
+
+
+<button class="discount btn btn_primary">Give Direct Price Discount</button>
+<button class="coupon btn btn-primary">Give Coupon Code Discount</button>
+</center>
+
+
+
+<div class='col-sm-12'>
+
+</div></div>
+
+
+
+
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="#">.</a></div>
+
+
+
+<style>
+.data_cssx{
+background:#ddd;
+padding:10px;
+height:500px;
+border:none;
+color:black;
+border-radius:20%;
+font-size:16px;
+text-align:center;
+
+
+}
+
+
+.data_cssx:hover{
+background:orange;
+color:black;
+
+}
+
+
+.dcss{
+background:fuchsia;
+padding:10px;
+width:300px;
+border:none;
+color:black;
+border-radius:20%;
+font-size:16px;
+text-align:center;
+
+
+}
+
+
+.dcss:hover{
+background:;
+color:black;
+
+}
+
+
+</style>
+
+
+
+
+<div class='row'>
+
+<div class='col-sm-1'></div>
+
+<div class='col-sm-10 data_cssx'>
+<center>
+<b style='font-size:26px'> Segment Big Polo</b><br>
+<b style='font-size:20px;color:purple;'>Price: 100(USD)</b><br>
+
+<div class='discountx2 dcss djs'></div><br>
+
+<img src="big_polo.jpg" style='min-width:200px;min-height:200px;max-width:200px;max-height:200px;'>
+</center>
+<br>
+<b>Description: </b>  This is a Big Polo Products Page.<br><br>
+
+
+
+<div class=''>
+  <div id="demo" class="collapse well">
+
+<div id='result'></div>
+<div id='loader'></div>
+
+<input type='hidden'  class='price pricex' value='100'>
+
+
+ <div class="form-group   col-sm-12  djsc">
+              <label> Your Coupon Code </label>
+              <input disabled type="text" class="col-sm-12 form-control" id="code" name="code" value="3030">
+            </div>
+
+
+ <div class="form-group   col-sm-12">
+              <label> Enter Customer Name </label>
+              <input type="text" class="col-sm-12 form-control" id="fullname" name="fullname" placeholder="Enter Customer Name">
+            </div>
+<br>
+
+ <div class="form-group   col-sm-12">
+              <label> Enter Email Address </label>
+              <input type="text" class="col-sm-12 form-control" id="email" name="email" placeholder="Enter Email">
+            </div>
+<br>
+<br>
+<button id='buy_btn' title='Buy Now' style='color:white;background:purple;border:none;padding:10px;'>CheckOut Now</button>
+  </div>
+
+ </div><br>
+
+  <button type="button" class="btn btn-primary buynow" data-toggle="collapse" data-target="#demo">Buy Now</button>
+
+</div>
+
+<div class='col-sm-1'></div>
+
+
+
+
+
+
+
+</div><br>
+
+
+</div>
+
+</div>
+
+</body>
+</html>

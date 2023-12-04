@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+<title> Segment Discount </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="landing page, website design" />
+  <script src="scripts/jquery.min.js"></script>
+
+  <script src="scripts/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="scripts/bootstrap.min.css">
+
+<link type="text/css" rel="stylesheet" href="scripts/storez.css">
+
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var i=Array.prototype.slice.call(arguments);i.unshift(e);analytics.push(i);return analytics}};for(var i=0;i<analytics.methods.length;i++){var key=analytics.methods[i];analytics[key]=analytics.factory(key)}analytics.load=function(key,i){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=i};analytics._writeKey="DLvZs4x58utQzu10WlYJNW2JytjefZyI";;analytics.SNIPPET_VERSION="4.16.1";
+  analytics.load("DLvZs4x58utQzu10WlYJNW2JytjefZyI");
+  analytics.page();
+  }}();
+
+
+
+
+
+
+var annoymous_visitor_id  = Math.floor(new Date().getTime() / 1000);
+
+
+var analysis = analytics.identify(annoymous_visitor_id, {
+  name: 'Anonymous Visitor',
+  page_viewed: 'index.html'
+
+});
+
+
+
+
+window.addEventListener('load', function(e) {
+    if (navigator.onLine) {
+$('#network_status').html("<br><br><div style='color:white;background:green;padding:10px;border:none;'>Your network status is Online </div>");
+
+    } else {
+$('#network_status').html("<br><br><div style='color:white;background:red;padding:10px;border:none;'>Your network status is Offline. Please Ensure You are Online to use this app... </div>");
+
+    }
+}, false);
+
+
+
+window.addEventListener('online', function(e) {
+$('#network_status').html("<br><br><div style='color:white;background:green;padding:10px;border:none;'>Your are back is Online </div>");
+
+}, false);
+            
+window.addEventListener('offline', function(e) {
+$('#network_status').html("<br><br><div style='color:white;background:red;padding:10px;border:none;'>Your Internet Connection is Down </div>");
+
+}, false);
+
+
+   </script>
+
+
+
+</head>
+<body>
+
+
+
+<div class="text-center">
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navgator">
+        <span class="navbar-header-collapse-color icon-bar"></span>
+        <span class="navbar-header-collapse-color icon-bar"></span>
+        <span class="navbar-header-collapse-color icon-bar"></span> 
+        <span class="navbar-header-collapse-color icon-bar"></span>                       
+      </button>
+     
+<li class="navbar-brand home_click imagelogo_li_remove" ><img class="img-rounded imagelogo_data" src="logo.png"></li>
+    </div>
+    <div class="collapse navbar-collapse" id="navgator">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+</ul>
+
+
+
+
+
+    </div>
+  </div>
+
+
+</nav>
+
+
+    </div><br />
+<br /><br />
+
+
+
+<div style='width:100vw; height: 100vh;  min-height:600px;'>
+ 
+
+<div class='row'>
+
+<center><div id='network_status'></div>
+<h2>Segment Products Discount Store</h2></center>
+
+<div class='col-sm-1'></div>
+<div class='col-sm-10'>
+
+An Online Stores that Identify, Monitor and Track Your <b>Customers and Annonymous Visitors</b> interactions on your website  and 
+
+immediately provide <b>price discount or Coupon Code</b> to the most frequently visited Products to attract Customers Purchase and increase Sales 
+leveraging <b> Twilio Segment and Amazon S3 Cloud Storage</b>.
+</div>
+
+<div class='col-sm-1'></div>
+
+</div>
+
+
+
+
+<hr style="margin-top:1.5em">
+<div style="text-align:center"><a href="#">.</a></div>
+
+
+
+<style>
+.data_cssx{
+background:#ddd;
+padding:10px;
+height:370px;
+border:none;
+color:black;
+border-radius:20%;
+font-size:16px;
+text-align:center;
+
+
+}
+
+
+.data_cssx:hover{
+background:orange;
+color:black;
+
+}
+
+</style>
+
+
+
+
+
+
+<div class='row'>
+
+<div class='col-sm-6 data_cssx'>
+<center>
+<b style='font-size:26px'> Segment Big Polo</b><br>
+<b style='font-size:20px;color:purple;' id='big_polo'>Price: 100(USD)</b><br><br>
+
+<img src="big_polo.jpg" style='min-width:200px;min-height:200px;max-width:200px;max-height:200px;'>
+</center>
+<br>
+
+<a style='color:white;background:purple;border:none;padding:10px;' href='big_polo.html' title='Access'> View Products Details and Buy </a>
+
+</div>
+
+
+
+<div class='col-sm-6 data_cssx'>
+<center>
+<b style='font-size:26px'> Segment Small Polo</b><br>
+<b style='font-size:20px;color:purple;' id='big_polo'>Price: 50(USD)</b><br><br>
+
+<img src="small_polo.jpg" style='min-width:200px;min-height:200px;max-width:200px;max-height:200px;'>
+</center>
+<br>
+
+<a style='color:white;background:purple;border:none;padding:10px;' href='small_polo.html' title='Access'> View Products Details and Buy </a>
+
+</div>
+
+
+
+
+
+</div><br>
+
+
+</div>
+
+</div>
+
+</body>
+</html>
